@@ -1,7 +1,26 @@
-<?php
-    include "./includes/header.php";
-    $page = $_GET['page'] ?? "";
-    $files = glob("./includes/*.inc.php");
-    var_dump($files);
-    include "./includes/$page.php";
-    include "./includes/footer.php";
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8"/>
+        <title>CESI AP - Blog/e-commerce</title>
+    </head>
+    <body>
+        <div id="container">
+
+        <?php
+            include "./includes/header.php";
+            $page = $_GET['page'] ?? "";
+            $page = "./includes/" . $page . ".inc.php";
+
+            $files = glob("./includes/*.inc.php");
+
+            if(in_array($page, $files))
+                include $page;
+            else include
+                "./includes/home.inc.php";
+
+            include "./includes/footer.php";
+        ?>
+        </div>
+    </body>
+</html>
