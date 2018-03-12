@@ -1,3 +1,8 @@
 <?php
-    $toto = "Ceci est une chaine de caractere";
-    echo $toto;
+    include "./includes/header.php";
+
+
+
+
+
+    include "./includes/footer.php";
